@@ -1,5 +1,6 @@
 package dad.mvc.login;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -21,9 +22,17 @@ public class LoginView extends VBox {
 		
 		usuarioText = new TextField("Nombre de usuario");
 		contrasenaText = new PasswordField();
+		ldapCheckbox = new CheckBox("Usar LDAP");
+		accederButton = new Button("Acceder");
+		cancelarButton = new Button("Cancelar");
 		
 		HBox usuarioBox = new HBox(5, new Label("Usuario:"), usuarioText);
 		HBox contrasenaBox = new HBox(5, new Label("Contraseña:"), contrasenaText);
+		HBox botonesHBox = new HBox(5, accederButton, cancelarButton);
+		
+		setPadding(new Insets(5));
+		
+		
 		
 	}
 															
