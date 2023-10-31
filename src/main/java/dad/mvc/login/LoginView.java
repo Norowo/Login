@@ -30,6 +30,7 @@ public class LoginView extends VBox {
 		
 		usuarioText.setPromptText("Nombre del usuario");
 		contrasenaText.setPromptText("Contraseña del usuario");
+		accederButton.setDefaultButton(true);
 		
 		GridPane usuarioContrasenaPane = new GridPane();
 		usuarioContrasenaPane.addRow(0, new Label("Usuario:"), usuarioText);
