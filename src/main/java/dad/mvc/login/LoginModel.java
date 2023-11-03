@@ -1,5 +1,8 @@
 package dad.mvc.login;
 
+import dad.login.auth.AuthService;
+import dad.login.auth.FileAuthService;
+import dad.login.auth.LdapAuthService;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -10,6 +13,9 @@ public class LoginModel {
 	private StringProperty usuarioValor = new  SimpleStringProperty();
 	private StringProperty contrasenaValor = new SimpleStringProperty();
 	private BooleanProperty ldapValor = new SimpleBooleanProperty();
+	private AuthService servicioAutentificacion;
+	
+	
 	public final StringProperty usuarioValorProperty() {
 		return this.usuarioValor;
 	}
@@ -17,6 +23,7 @@ public class LoginModel {
 	public final String getUsuarioValor() {
 		return this.usuarioValorProperty().get();
 	}
+	
 	
 	public final void setUsuarioValor(final String usuarioValor) {
 		this.usuarioValorProperty().set(usuarioValor);
@@ -46,6 +53,14 @@ public class LoginModel {
 		this.ldapValorProperty().set(ldapValor);
 	}
 	
-	
+	public boolean autenticar() throws Exception {
+		if(ldapValor.get()) {
+			servicioAutentificacion = new LdapAuthService();
+		} else {
+			servicioAutentificacion = new FileAuthService();
+		}
+		
+		return servicioAutentificacion.login(getUsuarioValor(), getContrasenaValor());
+	}
 	
 }

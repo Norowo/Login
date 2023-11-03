@@ -26,6 +26,9 @@ public class LoginView extends VBox {
 		contrasenaText = new PasswordField();
 		ldapCheckbox = new CheckBox("Usar LDAP");
 		accederButton = new Button("Acceder");
+		
+		
+		
 		cancelarButton = new Button("Cancelar");
 		
 		usuarioText.setPromptText("Nombre del usuario");
@@ -51,6 +54,8 @@ public class LoginView extends VBox {
 		
 	}
 
+	
+	
 	public TextField getUsuarioText() {
 		return usuarioText;
 	}
