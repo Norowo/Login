@@ -21,9 +21,9 @@ public class LoginController {
 				if(model.autenticar()) {
 					Alert alert = new Alert(Alert.AlertType.INFORMATION);
 					alert.initStyle(StageStyle.UTILITY);
-					alert.setTitle("Información");
-					alert.setHeaderText("Login realizado con éxito");
-					alert.setContentText("Bienvenido " + model.getUsuarioValor());
+					alert.setTitle("Iniciar sesión");
+					alert.setHeaderText("Acceso permitido");
+					alert.setContentText("Las credenciales de acceso son válidas");
 					alert.showAndWait();
 			
 				}
@@ -39,9 +39,9 @@ public class LoginController {
 			} catch (Exception a) {
 				Alert alert = new Alert(Alert.AlertType.ERROR);
 				alert.initStyle(StageStyle.UTILITY);
-				alert.setTitle("Error");
-				alert.setHeaderText("Fallo en el Login");
-				alert.setContentText("No se puede conectar con el servicio de autentificación");
+				alert.setTitle("Iniciar sesión");
+				alert.setHeaderText("Acceso denegado");
+				alert.setContentText("El usuario y/o la contraseña no son válidos.");
 				alert.showAndWait();
 			}
 			
