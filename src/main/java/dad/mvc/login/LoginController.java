@@ -20,7 +20,6 @@ public class LoginController {
 			try {
 				if(model.autenticar()) {
 					Alert alert = new Alert(Alert.AlertType.INFORMATION);
-					alert.initStyle(StageStyle.UTILITY);
 					alert.setTitle("Iniciar sesión");
 					alert.setHeaderText("Acceso permitido");
 					alert.setContentText("Las credenciales de acceso son válidas");
@@ -29,7 +28,6 @@ public class LoginController {
 				}
 				else {
 					Alert alert = new Alert(Alert.AlertType.ERROR);
-					alert.initStyle(StageStyle.UTILITY);
 					alert.setTitle("Información");
 					alert.setHeaderText("Fallo en el Login");
 					alert.setContentText("Usuario o contraseña erronea");
