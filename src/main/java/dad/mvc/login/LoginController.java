@@ -28,15 +28,14 @@ public class LoginController {
 				}
 				else {
 					Alert alert = new Alert(Alert.AlertType.ERROR);
-					alert.setTitle("Información");
-					alert.setHeaderText("Fallo en el Login");
-					alert.setContentText("Usuario o contraseña erronea");
+					alert.setTitle("Iniciar sesión");
+					alert.setHeaderText("Acceso denegado");
+					alert.setContentText("El usuario y/o la contraseña no son válidos.");
 					alert.showAndWait();
 			
 				}
 			} catch (Exception a) {
 				Alert alert = new Alert(Alert.AlertType.ERROR);
-				alert.initStyle(StageStyle.UTILITY);
 				alert.setTitle("Iniciar sesión");
 				alert.setHeaderText("Acceso denegado");
 				alert.setContentText("El usuario y/o la contraseña no son válidos.");
