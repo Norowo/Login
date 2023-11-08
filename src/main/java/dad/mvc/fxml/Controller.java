@@ -89,12 +89,12 @@ public class Controller implements Initializable {
 			servicioAutentificacion = new FileAuthService();
 		}
 		
-		return servicioAutentificacion.login(null, null);
+		return servicioAutentificacion.login(usuarioValor.get(), contrasenaValor.get());
 	}
 	
 	@FXML
-	void onAccederAction(ActionEvent event) {
-		System.out.println(usuarioValor, contrasenaValor);
+	private void onAccederAction(ActionEvent event) {
+		System.out.println(usuarioValor + ", " +  contrasenaValor);
 		try {
 			if(autenticar()) {
 				Alert alert = new Alert(Alert.AlertType.INFORMATION);
